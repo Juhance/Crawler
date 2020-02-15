@@ -49,7 +49,6 @@ public class JobProcessor implements PageProcessor {
                 //采用boolmFilterduplicateRemove方法+依赖包 com.google.guava guava去重
                 .setScheduler(new QueueScheduler().setDuplicateRemover(new BloomFilterDuplicateRemover(10000000)))//设置url最大数字
                 .thread(5);
-        Scheduler scheduler = spider.getScheduler();
         //执行爬虫
         spider.run();
     }
